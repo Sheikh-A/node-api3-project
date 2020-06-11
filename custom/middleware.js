@@ -81,6 +81,7 @@ function validatePostId (req, res, next) {
       .then(user => {
           if(user) {
               req.user = user
+              next();
           } else if (!user) {
               res.status(400).json({ message: 'Invalid User ID!' });
           } else {

@@ -20,7 +20,7 @@ const logger = mw.logger;
 const validateUserId = mw.validateUserId;
 const validateUser = mw.validateUser;
 const validatePost = mw.validatePost;
-const validatePostId = mw.validatePostId;
+//const validatePostId = mw.validatePostId;
 const router = express.Router();
 
 router.use(logger);
@@ -147,12 +147,12 @@ router.get('/:id/posts', (req, res) => {
 
 router.delete('/:id', validateUserId, (req, res) => {
   
-  const {id} = req.params;
+  const { id } = req.params;
 
   Users.remove(id)
     .then(user => {
       //if(user) {
-        res.status(200).json({message: `You deleted post ${id}`});
+        res.status(200).json({message: `You deleted user ${id}`});
       // } else {
       //   res
       //     .status(404)
