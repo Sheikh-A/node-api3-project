@@ -103,7 +103,9 @@ router.get('/', (req, res) => {
   
   Users.get()
     .then(user => {
-      res.status(200).json(user);
+      // const environment = process.env;
+      // const port = process.env.PORT || 5050;
+      res.status(200).json({user});
     })
     .catch(error => {
       console.log(error);
