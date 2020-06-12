@@ -105,7 +105,11 @@ router.get('/', (req, res) => {
     .then(user => {
       // const environment = process.env;
       // const port = process.env.PORT || 5050;
-      res.status(200).json({user});
+      res.status(200).json({
+        Message_of_the_Day: process.env.MOTD, //enviornment variable
+        Greeting: process.env.GREETING, //environment variable
+        user,
+      });
     })
     .catch(error => {
       console.log(error);

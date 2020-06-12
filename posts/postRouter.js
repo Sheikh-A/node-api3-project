@@ -15,7 +15,10 @@ router.get('/', (req, res) => {
 
   Posts.get()
     .then(post => {
-      res.status(200).json({ post });
+      res.status(200).json({
+        Message_of_the_Day: process.env.MOTD, //enviornment variable
+        Greeting: process.env.GREETING, //environment variable 
+        post });
     })
     .catch(error => {
       console.log(error);
